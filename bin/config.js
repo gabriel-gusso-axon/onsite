@@ -1,6 +1,6 @@
 import path from "node:path";
 const config = {
-	WIFI_NAME: "Axon",
+	WIFI_NAME: "Martiaco Industria",
 	SAVE_PATH: path.join(process.env.USERPROFILE, "Documents/onsite"),
 };
 

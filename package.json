@@ -13,7 +13,6 @@
   "author": "Gabriel Gusso",
   "license": "ISC",
   "dependencies": {
-    "commander": "^12.0.0",
     "wifi-name": "^3.1.1"
   }
 }

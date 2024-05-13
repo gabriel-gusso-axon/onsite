@@ -37,17 +37,15 @@ async function checkWifi() {
 
 async function promptUserAboutPresence() {
 	const rl = readline.createInterface({ input, output });
-	const answer = await rl.question("Você foi para a empresa hoje? (Y/N) \n");
+	const answer = (await rl.question("Você foi para a empresa hoje? (Y/N) \n")).toLowerCase();
 
 	let success = false;
-	if (answer.toLowerCase() === "y") {
+
+	if (answer === "y" || answer === "n") {
 		await writeCSV(true);
 		success = true;
-	} else if (answer.toLowerCase() === "n") {
-		await writeCSV(false);
-		success = true;
 	} else {
-		console.error("\n====Opção inválida====\n");
+		console.error("\n==== Opção inválida ====\n");
 		rl.close();
 		promptUserAboutPresence();
 	}

@@ -58,26 +58,18 @@ async function promptUserAboutPresence() {
 
 async function writeCSV(onSite) {
 	const date = new DateManager();
-	const savePath = path.join(config["SAVE_PATH"]);
-	const csvPath = path.join(savePath, `${date.longMonth()}-${date.year()}.csv`);
+	const savePath = path.join(config["SAVE_PATH"], `${date.longMonth()}-${date.year()}.csv`);
 
 	try {
-		let fileData;
-
-		try {
-			await fs.stat(csvPath);
-			fileData = await fs.readFile(csvPath, "utf-8");
-		} catch (err) {
-			fileData = "";
-		}
-
-		let newData = {};
-		newData[date.formattedDate()] = onSite ? "Sim" : "Não";
+		let fileData = await fs.readFile(savePath, "utf-8").catch(() => "");
+		let newData = {
+			[date.formattedDate()]: onSite ? "Sim" : "Não",
+		};
 
 		//creates complete data to be written
 		const completeData = new CSVDataGenerator(fileData, newData).generateCompleteData();
 
-		await fs.writeFile(csvPath, completeData);
+		await fs.writeFile(savePath, completeData);
 	} catch (err) {
 		console.log("Não foi possível atualizar o registro", err);
 	}

@@ -19,6 +19,7 @@ class CSVDataGenerator {
 
 		if (this._oldData) {
 			const splitted = this._oldData.split("\n");
+
 			for (let i = 1; i < splitted.length - 1; i++) {
 				const row = splitted[i].split(",");
 				obj[row[0]] = row[1];
@@ -45,16 +46,18 @@ class CSVDataGenerator {
 		let data = "Data,Presente";
 		let total = 0;
 
+		console.log(this._daysPresenceRelation);
 		for (const d in this._daysPresenceRelation) {
 			data += `\n${d},${this._daysPresenceRelation[d]}`;
 
-			if (this._daysPresenceRelation[d] === "Sim") {
+			if (this._daysPresenceRelation[d].includes("Sim")) {
 				total++;
 			}
 		}
 
 		data += `\nTotal: ${total}`;
 
+		console.log(data);
 		return data;
 	}
 }

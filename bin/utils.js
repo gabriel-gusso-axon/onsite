@@ -12,8 +12,6 @@ class CSVDataGenerator {
 		this._oldData = csvData;
 		this._dataToAdd = dataToAdd;
 		this._daysPresenceRelation = this._createDaysPresenceRelation();
-
-		this._getTotalPresence();
 	}
 
 	_createDaysPresenceRelation() {

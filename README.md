@@ -4,7 +4,7 @@ Script para verificar se você foi para a empresa 👍
 
 Na pasta escolhida, um arquivo `.csv` é salvo com o padrão `mês-ano.csv` para cada novo mês.
 
-Você pode escolher entre marcar as entradas manualmente (rodando `onsite -y` pelo prompt de comando) ou deixar que ele verifique a conexão com o Wifi da empresa todos os dias pelo scheduler do Windows.
+Você pode escolher entre marcar as entradas manualmente (rodando `onsite` pelo prompt de comando) ou deixar que ele verifique a conexão com o Wifi da empresa todos os dias pelo scheduler do Windows.
 
 <img src="./readme/csv-preview.png" width="100px">
 

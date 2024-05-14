@@ -46,7 +46,6 @@ class CSVDataGenerator {
 		let data = "Data,Presente";
 		let total = 0;
 
-		console.log(this._daysPresenceRelation);
 		for (const d in this._daysPresenceRelation) {
 			data += `\n${d},${this._daysPresenceRelation[d]}`;
 
@@ -57,7 +56,10 @@ class CSVDataGenerator {
 
 		data += `\nTotal: ${total}`;
 
+		console.log("\n");
 		console.log(data);
+		console.log("\n");
+
 		return data;
 	}
 }

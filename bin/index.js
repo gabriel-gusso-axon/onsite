@@ -42,7 +42,7 @@ async function promptUserAboutPresence() {
 	let success = false;
 
 	if (answer === "y" || answer === "n") {
-		await writeCSV(true);
+		await writeCSV(answer === "y");
 		success = true;
 	} else {
 		console.error("\n==== Opção inválida ====\n");
